@@ -1,0 +1,68 @@
+<html><head/><body>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+<link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Open+Sans">
+<style>
+  body {
+    font-family: 'Open Sans', sans;
+    font-size: 12px;
+  }
+  #map {
+    width:66%;
+    height:100%;
+    padding:0px !important;
+    margin:0px !important;
+    top:0px !important;
+    left:0px !important;
+    position: fixed !important;
+    display:block !important;
+  }
+
+ div.leaflet-popup-content{
+     width:90ex !important;
+     height:100%;
+     overflow-y:scroll;
+ }
+ #feature_infos {
+    width:33%;
+    height: 100%;
+    background: rgba(255, 255, 255, 1);
+    position: absolute !important;
+    top:0px;
+    right:0px;
+    vertical-align: middle;
+    margin:0px !important;
+    border:0px solid grey;
+ }
+</style>
+ 
+<div id="map"></div>
+<div id="feature_infos"><span id="info"></span></div>
+
+<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+<script>
+    var map = L.map('map').setView([48.852794, 2.320437], 13);
+
+    function onEachFeature(feature, layer) {    
+        layer.on('mouseover', function (e) {
+            document.getElementById("info").innerHTML = feature.properties.popupContent;     
+        });
+                
+    }
+        
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', 
+        {  maxZoom: 18,
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
+        }).addTo(map);
+        var data={"type": "FeatureCollection", "features": [{"geometry": {"type": "Point", "coordinates": [2.3463884, 48.8467002]}, "type": "Feature", "properties": {"popupContent": "<b> sponsored &#8364; --  7000 m<sup>2</sup> -- </b> -- <a href=\"https://fr.wikipedia.org/wiki/Panth\u00e9on_(Paris)\" target=\"_blank\">photos</a> <a href=\"https://www.google.com/maps/preview/@48.846700,2.346388,13z\" target=\"_blank\">gmap</a><br/><iframe src=\"https://fr.wikipedia.org/wiki/Panth\u00e9on_(Paris)\" width=\"100%\" height=\"400px\" frameborder=\"0\"></iframe><br/>**** HOUSING n\u00b0 L xyz/uvw<br/>Place du Pantheon<br/>75005 Paris<br/><b>DESCRIPTION OF THE HOUSING</b><br/>1-room apartment in building on the 1\u00e8re \u00e9tage<br/>Living space: 7000 sq.m<br/>This housing is suitable for 79 persons maximum.<br/><b>KITCHEN</b><br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In egestas arcu est, non mattis ipsum porta vel. Ut sed aliquam nisl, tincidunt pulvinar justo. Suspendisse mattis tincidunt neque id tristique. Nunc in elementum mi, vel pellentesque velit. Nullam cursus rutrum efficitur. Integer ut neque leo. Pellentesque a maximus eros, sit amet mattis felis. Suspendisse sollicitudin maximus massa a laoreet.<br/><b>BATHROOM</b>(S)<br/>Mauris maximus turpis auctor gravida suscipit. Curabitur eu erat eget enim viverra rutrum ac id enim. Ut dignissim, sem vel accumsan pretium, metus lectus pharetra neque, in egestas erat risus eu ligula. Vestibulum vitae feugiat leo. Ut placerat lacus orci, vitae placerat elit aliquet interdum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce lacus neque, luctus eu finibus a, blandit vitae neque.<br/><b>DESCRIPTION OTHER ROOMS</b><br/>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus odio massa, posuere in dapibus id, condimentum in risus. Vivamus purus mauris, eleifend ac porttitor vel, accumsan a felis. Praesent lacinia ipsum id elit placerat ultrices. In tristique volutpat lobortis.<br/><b>EQUIMENT'S DESCRIPTION</b><br/>Quisque semper, ipsum a aliquet ultricies, felis odio feugiat massa, eget imperdiet urna purus vitae metus. Morbi at tincidunt felis. Pellentesque commodo consectetur purus sodales vulputate. Nam eget dui efficitur, vehicula ante id, hendrerit metus. Vestibulum finibus diam at ante molestie, vel tempus elit condimentum.<br/><b>SERVICES</b><br/>Cras vestibulum sollicitudin aliquam. Maecenas at erat porta, laoreet dui in, bibendum nisi. Pellentesque feugiat nisl leo, vel consectetur justo tempor ac. Duis egestas dolor sit amet eros gravida, accumsan vestibulum ligula pharetra. Maecenas aliquam lectus non congue condimentum.<br/><b>ACCESS</b><br/>Walking<br/><b>RENT FOR THE HOUSING</b><br/>Monthly rent: sponsored euros<br/>Proin dolor mi, condimentum sit amet sapien non, egestas laoreet felis. Curabitur maximus ligula hendrerit lectus porta, quis dictum est consectetur. Mauris sodales dui lorem, eget convallis diam rutrum quis. Sed feugiat blandit justo vitae ornare. Donec varius blandit metus, egestas convallis mi porta sit amet. Integer porttitor mi quis vehicula congue.<br/>Link for pictures: https://fr.wikipedia.org/wiki/Panth\u00e9on_(Paris)<br/><b>TO RESERVE OR FOR ANY QUESTION:</b><br/>Mr. Jacques-Germain Soufflot<br/>Mr. Jean-Baptiste Rondelet<br/>https://www.monuments-nationaux.fr<br/>"}}, {"geometry": {"type": "Point", "coordinates": [2.2944861, 48.8588871]}, "type": "Feature", "properties": {"popupContent": "<b> 0 &#8364; --  250 m<sup>2</sup> -- </b> -- <a href=\"https://it.wikipedia.org/wiki/Torre_Eiffel\" target=\"_blank\">photos</a> <a href=\"https://www.google.com/maps/preview/@48.858887,2.294486,13z\" target=\"_blank\">gmap</a><br/><iframe src=\"https://it.wikipedia.org/wiki/Torre_Eiffel\" width=\"100%\" height=\"400px\" frameborder=\"0\"></iframe><br/>**** HOUSING n\u00b0 L pqt/rsz<br/>Champ de Mars, 5 Avenue Anatole France<br/>75007 Paris<br/><b>DESCRIPTION OF THE HOUSING</b><br/>1-room apartment in a tall building on the 3rd floor (with lifts)<br/>Living space: 250 sq.m<br/>This housing is suitable for 3 persons maximum (and one fonograph)<br/><b>KITCHEN</b><br/>Suspendisse mollis, metus id tempor eleifend, ipsum tellus lacinia nibh, ac egestas erat purus commodo erat. Mauris rutrum pharetra nulla, et pellentesque risus aliquet ut. Nullam non dolor vel libero interdum tincidunt quis sit amet leo. Mauris non malesuada velit.<br/><b>BATHROOM</b>(S)<br/>Donec commodo nibh nibh, sit amet ultricies metus maximus quis. Vestibulum ac dolor sapien. Praesent eget laoreet quam, ac pulvinar lacus. Phasellus eget sollicitudin felis, a rhoncus ex. Ut eu ligula tellus. Duis mattis lectus ex, non bibendum lacus iaculis a. Nulla facilisis imperdiet augue sit amet sollicitudin. Suspendisse a consequat leo. Sed id risus vel magna venenatis condimentum.<br/><b>DESCRIPTION OTHER ROOMS</b><br/>Ut ullamcorper turpis vel ex laoreet laoreet. Duis quis nisl ante. In non elementum enim, quis accumsan risus. Quisque purus nunc, aliquet et quam nec, pellentesque congue mauris. Duis eu elit ex. Nam vitae lectus lectus. Fusce massa lectus, semper in eros id, faucibus fermentum eros.<br/><b>EQUIMENT'S DESCRIPTION</b><br/>Vestibulum volutpat, tellus eu varius euismod, lorem libero pulvinar turpis, vitae laoreet diam arcu ultricies risus.<br/><b>SERVICES</b><br/>Blanket and/or feather-bed, sheets<br/><b>ACCESS</b><br/>Car not necessary<br/><b>RENT FOR THE HOUSING</b><br/>Monthly rent: 0 euros<br/>Link for pictures: https://it.wikipedia.org/wiki/Torre_Eiffel<br/><b>TO RESERVE OR FOR ANY QUESTION:</b><br/>Please contact:<br/> Mr. Gustave Eiffel<br/> Mr. Thomas Edison<br/>"}}]}
+        var geojsonMarkerOptions = {
+            radius: 8,
+            fillColor: "#ff7800",
+            color: "#000",
+            weight: 1,
+            opacity: 1,
+            fillOpacity: 0.8
+        };
+        L.geoJson(data,{onEachFeature : onEachFeature}).addTo(map);
+	</script>
+</body><html/>
