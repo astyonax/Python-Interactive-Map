@@ -7,7 +7,7 @@ Their services are truly great and I easily got set-up in France.
 
 However, reading their list of available flats was a nightmare, as  the list is truly a `textual list`.
 
-This notebook converts the list in an [interactive map](example.html), with the description of each marker showing up when the mouse is over it.
+This notebook converts the list in an [interactive map](example_map.html), with the description of each marker showing up when the mouse is over it.
 
 ## Python's automagic
 
