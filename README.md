@@ -54,7 +54,7 @@ The following code makes the map for you (jump at the end to see an example) in 
 It contains only two fictious flats: one in Tour Eiffel, and another in the Pantheon.
 
 ## Preview
-Download and open [example_map.html](example_map.html).
+Download and open [example_map.html](https://raw.githubusercontent.com/astyonax/Python-Interactive-Map/master/example_map.html).
 
 
 ## Usage
