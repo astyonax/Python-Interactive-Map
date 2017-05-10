@@ -7,7 +7,7 @@ Their services are truly great and I easily got set-up in France.
 
 However, reading their list of available flats was a nightmare, as  the list is truly a `textual list`.
 
-[This notebook](Maps.ipynb) converts the list in an [interactive map](example_map.html), with the description of each marker showing up when the mouse is over it.
+[This notebook](Maps.ipynb) converts the list in an [interactive map](http://htmlpreview.github.com/?https://raw.githubusercontent.com/astyonax/Python-Interactive-Map/master/example_map.html), with the description of each marker showing up when the mouse is over it.
 
 ## Python's automagic
 
@@ -54,7 +54,7 @@ The following code makes the map for you (jump at the end to see an example) in 
 It contains only two fictious flats: one in Tour Eiffel, and another in the Pantheon.
 
 ## Preview
-Download and open [example_map.html](https://raw.githubusercontent.com/astyonax/Python-Interactive-Map/master/example_map.html).
+Here: [example_map.html](http://htmlpreview.github.com/?https://raw.githubusercontent.com/astyonax/Python-Interactive-Map/master/example_map.html).
 
 
 ## Usage
